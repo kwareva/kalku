@@ -15,7 +15,7 @@ function clearExpression() {
     document.getElementById("expression").value = expression;
 }
 
-function eval(){
+function calculate() {
     if (!expression.trim()) {
         return { error: 'Mohon masukkan ekspresi!' };
     } 
@@ -39,8 +39,7 @@ function eval(){
     } catch(e){
     return{error:e.toString()};//Balikkanerrorjikegalevaliasiagal    
     }
-}
-function calculate() {
+    
     fetch('/api/calculate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
