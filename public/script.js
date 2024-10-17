@@ -39,7 +39,17 @@ function calculate() {
     } catch(e){
     return{error:e.toString()};//Balikkanerrorjikegalevaliasiagal    
     }
-    
+
+    if (!expression.trim()) {
+        return { error: 'Mohon masukkan ekspresi!' };
+    } else {
+        try {
+            const result = eval(expression);
+            return { result }; // Kirim balik hasil evaluasi dalam bentuk JSON
+        } catch (e) {
+            return { error: e.toString() }; // Balikkan error jika evaluasi gagal
+        }
+    }
     fetch('/api/calculate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
