@@ -39,14 +39,6 @@ function eval(){
     } catch(e){
     return{error:e.toString()};//Balikkanerrorjikegalevaliasiagal    
     }
-
-    console.debug('Evaluating Expression:', expression);
-        try{
-            letresuleteval(expresion);
-        }catch(err){
-            console.errrorevalerrortostring());//loggingdebugging
-        return{errorevalerrortostring()};//balikkannegatorijikegal
-        }
 }
 function calculate() {
     fetch('/api/calculate', {
