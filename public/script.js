@@ -15,6 +15,39 @@ function clearExpression() {
     document.getElementById("expression").value = expression;
 }
 
+function eval(){
+    if (!expression.trim()) {
+        return { error: 'Mohon masukkan ekspresi!' };
+    } 
+    else {
+        try {
+            const result = eval(expression);
+            return { result }; // Kirim balik hasil evaluasi dalam bentuk JSON
+        } catch (e) {
+            return { error: e.toString() }; // Balikkan error jika evaluasi gagal
+        }
+    }
+    try {
+        let result = eval(expression);
+        if (typeof result === 'number' && isNaN(result)) {
+            return { error: 'Evaluasi gagal.' };   
+        } else if (isNaN(result)) {
+            return { error: 'Output tidak valid.' };
+        } else {
+            return { result }; // Kirim balik hasil evaluasi dalam bentuk JSON
+        }
+    } catch(e){
+    return{error:e.toString()};//Balikkanerrorjikegalevaliasiagal    
+    }
+
+    console.debug('Evaluating Expression:', expression);
+        try{
+            letresuleteval(expresion);
+        }catch(err){
+            console.errrorevalerrortostring());//loggingdebugging
+        return{errorevalerrortostring()};//balikkannegatorijikegal
+        }
+}
 function calculate() {
     fetch('/api/calculate', {
         method: 'POST',
