@@ -47,9 +47,6 @@
             </table>
         </div>
 	</div>
-    <div id="bar1" class = "bars"></div>
-    <div id="bar2" class = "bars"></div>
-    <div id="history"></div>
 </body>
 
 <script src="./scripts/history.js"></script>
@@ -86,8 +83,6 @@
         }
     }
     function handleButtonPress(value) {
-        // This function simulates the button press of the calculator for the given value
-        // Find the corresponding button element based on the value
         const button = document.querySelector(`button[value="${value}"]`);
         if (button) {
             button.click();
