@@ -51,7 +51,6 @@
 
 <script src="./scripts/history.js"></script>
 <script src="./scripts/calculation.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-70447982-5"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
@@ -66,18 +65,15 @@
         handleKeyPress(event.key);
     });
 
-    // This function will be responsible for handling the button press from the keyboard..Try thses key also if want you can also chnage these settings,...
     function handleKeyPress(key) {
-    //  "Enter" key is pressed, trigger the "=" button press
         if (key === 'Enter') {
             handleButtonPress('=');
         }
 
-        //number key is pressed, trigger the corresponding number button press
         if (/[0-9]/.test(key)) {
             handleButtonPress(key);
         }
-        //  operator key is pressed (+, -, *, /), trigger the corresponding operator button press
+	    
         if (/[\+\-\*\/%]/.test(key)) {
             handleButtonPress(key);
         }
